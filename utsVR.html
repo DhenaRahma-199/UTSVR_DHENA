@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>UTSVR - VR Garden</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #ECECEC">
+      
+      <!-- Suara latar belakang -->
+<a-entity sound="src: url(asset/sound/peacefull-drone-132285.mp3); autoplay: true; loop: true; volume: 0.5"></a-entity>
+
+      
+      <!-- Kamera pengguna -->
+      <a-entity position="0 1.6 0">
+        <a-camera wasd-controls look-controls></a-camera>
+      </a-entity>
+
+      <!-- Pencahayaan -->
+      <a-entity light="type: ambient; color: #ffffff"></a-entity>
+      <a-entity light="type: directional; color: #ffffff; intensity: 0.5" position="1 1 0"></a-entity>
+
+      <!-- Model Taman -->
+      <a-entity 
+        gltf-model="asset/garden/scene.gltf"
+        position="-5.210 0.000 4.091"
+        scale="1 1 1">
+      </a-entity>
+
+      <!-- Model Sepeda -->
+      <a-entity 
+        id="bicycle"
+        gltf-model="asset/bicycle/scene.gltf"
+        position="-6.386 0.613 23.588"
+        scale="3.000 3.000 3.000"
+        animation="property: position; 
+                   to: 2 1.6 24.0; 
+                   dir: alternate; 
+                   dur: 4000; 
+                   easing: linear; 
+                   loop: true">
+      </a-entity>
+
+      <!-- Model Matahari -->
+      <a-entity 
+        id="the-sun"
+        gltf-model="asset/the_sun/scene.gltf"
+        position="10 15 -10"
+        scale="5 5 5"
+        animation="property: rotation; 
+                   to: 0 360 0; 
+                   loop: true; 
+                   dur: 10000; 
+                   easing: linear">
+      </a-entity>
+
+      <!-- Model Origami Water Lilies -->
+      <a-entity 
+        id="water-lilies"
+        gltf-model="asset/origami_-_water_lilies/scene.gltf"
+        position="-2.367 0.344 5.494"
+        scale="-0.441 0.821 -0.413">
+      </a-entity>
+
+      <!-- Model Awan (Clouds Low Poly) -->
+      <a-entity 
+        id="clouds"
+        gltf-model="asset/clouds_low_poly/scene.gltf"
+        position="4.416 28.903 -4.822"
+        scale="1.771 2.483 3.153"
+        material="color: blue"
+        animation="property: position; 
+                   to: 4.416 29.5 -4.822; 
+                   dir: alternate; 
+                   dur: 8000; 
+                   easing: linear; 
+                   loop: true">
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
